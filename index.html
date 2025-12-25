@@ -37,6 +37,12 @@
     <!--  <link rel="stylesheet" href="css/colors/orange.css">-->
     <!--  <link rel="stylesheet" href="css/colors/green.css">-->
 
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+
     <!-- Feature detection -->
     <script src="js/modernizr-2.6.2.min.js"></script>
     <!-- Fonts -->
@@ -273,6 +279,19 @@
     <script src="js/waypoints.min.js"></script>
     <script src="js/jqBootstrapValidation.js"></script>
     <script src="js/main.js"></script>
+    
+    <script>
+        // Smooth scroll navigation
+        $('#main-menu a').on('click', function(e) {
+            e.preventDefault();
+            var target = $(this).attr('href');
+            if ($(target).length) {
+                $('html, body').animate({
+                    scrollTop: $(target).offset().top
+                }, 750);
+            }
+        });
+    </script>
 	
 </body>
 
